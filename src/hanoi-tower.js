@@ -14,12 +14,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
+
+
+
+
+
+
+
+
+
+
+
 function calculateHanoi(diskNumber, turnsSpeed) {
-  const turns = 2 ** diskNumber - 1; // формула для минимального кол-во оборотов
-  const seconds = Math.floor(turns / (turnsSpeed / 3600)); // время в секундах, округленных в меньшую сторону
+  const turns = 2 ** diskNumber - 1;
+  const seconds = Math.floor(turns / (turnsSpeed / 3600));
   return { turns, seconds };
 }
-
+console.log(calculateHanoi(9, 4308));
 
 module.exports = {
   calculateHanoi
