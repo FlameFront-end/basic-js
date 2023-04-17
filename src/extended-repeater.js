@@ -24,9 +24,7 @@ function repeater(str, options) {
 
   let repeatedAddition = `${addition}${additionSeparator}`.repeat(additionRepeatTimes - 1) + addition;
 
-  let repeatedStr = `${str}${repeatedAddition}${separator}`.repeat(repeatTimes - 1) + `${str}${repeatedAddition}`;
-
-  return repeatedStr;
+ return`${str}${repeatedAddition}${separator}`.repeat(repeatTimes - 1) + `${str}${repeatedAddition}`;
 }
 
 

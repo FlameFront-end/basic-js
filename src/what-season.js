@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSeason(date) {
-  if (!(date instanceof Date) || date.hasOwnProperty('toString')) {
+  if (date === null || date.hasOwnProperty('toString')) {
     throw new Error("Invalid date!");
   }
   const month = date.getMonth() + 1;
