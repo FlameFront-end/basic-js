@@ -41,4 +41,4 @@ function getSeason(date) {
 
 module.exports = {
   getSeason
-};
+}; //ошибка
