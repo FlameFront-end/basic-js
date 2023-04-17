@@ -12,35 +12,33 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSeason(date) {
-  if (!(date instanceof Date) || date.hasOwnProperty('toString')) {
-    throw new Error("Invalid date!");
+  if (!(date instanceof Date && !isNaN(date))) {
+    throw new Error('Invalid date!');
   }
-  const month = date.getMonth() + 1;
-  switch (month) {
-    case 12:
+
+  const month = date.getMonth();
+  switch(month) {
+    case 0:
     case 1:
+    case 11:
+      return 'winter';
     case 2:
-      return "winter";
     case 3:
     case 4:
+      return 'spring';
     case 5:
-      return "spring";
     case 6:
     case 7:
+      return 'summer';
     case 8:
-      return "summer";
     case 9:
     case 10:
-    case 11:
-      return "fall";
+      return 'autumn';
     default:
-      throw new Error("Invalid date!");
+      return 'Unable to determine the time of year!';
   }
 }
 
-const springDate = new Date(2020, 02, 31)
-
-console.log(getSeason(springDate))
 
 module.exports = {
   getSeason
