@@ -40,4 +40,4 @@ const chainMaker = {
 
 module.exports = {
   chainMaker
-};
+}; //ошибка
