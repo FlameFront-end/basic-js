@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSeason(date) {
-  if (date === null || date.hasOwnProperty('toString')) {
+  if (date === null || date === undefined) {
     throw new Error("Invalid date!");
   }
 
