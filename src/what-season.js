@@ -15,6 +15,10 @@ function getSeason(date) {
   if (date === null || date.hasOwnProperty('toString')) {
     throw new Error("Invalid date!");
   }
+
+  if ((date instanceof Date) || date.hasOwnProperty('toString')) {
+    throw new Error("Invalid date!");
+  }
   const month = date.getMonth() + 1;
   switch (month) {
     case 12:
